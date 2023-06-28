@@ -1,13 +1,13 @@
 import React, { useState } from'react';
 import './App.css';
-import { quizData } from './Assets/Quiz';
+import { quizData, sortedListAnswers } from './Assets/Quiz';
 import { Random } from './Utilities/Random';
 
 function App() {
 
 const allData=quizData;
-const[gameData, setGameData]=useState({Q:'start',A:'start'});
-
+const [gameData, setGameData] = useState({Q:'start',A:'start'});
+const [answerData, setAnswerData] = useState(sortedListAnswers);
 
 
 const onClickHandlerNewGame = () => {
@@ -15,7 +15,9 @@ const onClickHandlerNewGame = () => {
 
 
 let Rand = Random(allData.length);
-console.log("onClickHandlerNewGame ", Rand);
+setGameData({Q:allData[Rand].Q,A:allData[Rand].A});
+console.log("gameData ", gameData.Q + " " + gameData.A, Rand);
+
 }
 
 
