@@ -44,11 +44,13 @@ const winLoseCalc = (answerLet) => {
 
   return (
     <div className="App">
-
+      <div className="title">Awesome NZ Quiz</div>
+        <div className="Qheader">{gameData.Q}</div>
+        <div className="col-sm">
         <button className='buttonSubmit btn btn-default' onClick = {onClickHandlerNewGame} >Choose a Random Question</button>
+        </div>
 
-
-        {gameData.Q} {gameData.A}
+        
     
     <div className='col-sm'>
       <Select
