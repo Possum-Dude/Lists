@@ -4,6 +4,8 @@ import { quizData, sortedListAnswers } from './Assets/Quiz';
 import { Random } from './Utilities/Random';
 import Select from 'react-select';
 import { selectCustomStyles } from './Utilities/SelectReactSettings';
+import swal from "sweetalert2";
+import withReactContent from 'sweetalert2-react-content';
 
 function App() {
 
@@ -12,6 +14,7 @@ const [gameData, setGameData] = useState({Q:'start',A:'start'});
 const [answerData, setAnswerData] = useState(sortedListAnswers);
 const [answer, setAnswer] = useState("");
 const [winlose, setWinlose] = useState("");
+const MySwal = withReactContent(swal);
 let answerLet = "";
 
 const onClickHandlerNewGame = () => {
@@ -36,15 +39,27 @@ const winLoseCalc = (answerLet) => {
 
   if ( answerLet !== "undefined"){
     if (answerLet === gameData.A) {
-      console.log("You Win!");
+      MySwal.fire({
+        icon:'success',
+        title: 'You Win',
+        text: 'the answer is ' + gameData.A,
+        footer: 'want to play again?',
+        
+      })
       return "You Win!";
     } 
     else {
-      console.log("You Lose!");
+      MySwal.fire({
+        icon: "error",
+        title: 'You Lose',
+        text: 'the anser is ' + gameData.A,
+        footer: 'Nice try have another go'
+      })
       return "You Lose!";
     }
 }
-}
+};
+;
 
   return (
     <div className="App">
@@ -67,7 +82,7 @@ const winLoseCalc = (answerLet) => {
       controlShouldRenderValue={false}
       />
     </div>
-    <h4>{answer ? "You selected " + answer + winlose : ""}</h4>
+    <div>{winlose}</div>
   </div>
   );
 }
