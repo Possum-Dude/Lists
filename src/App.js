@@ -11,12 +11,15 @@ const allData=quizData;
 const [gameData, setGameData] = useState({Q:'start',A:'start'});
 const [answerData, setAnswerData] = useState(sortedListAnswers);
 const [answer, setAnswer] = useState("");
+const [winlose, setWinlose] = useState("");
 let answerLet = "";
 
 const onClickHandlerNewGame = () => {
+  setWinlose("");
 let Rand = Random(allData.length);
 setGameData({Q:allData[Rand].Q,A:allData[Rand].A});
 console.log("gameData ", gameData.Q + " " + gameData.A);
+
 }
 
 const handleAnswerChange = (e, ) => {
@@ -26,7 +29,8 @@ setAnswer(e.value);//this holds the state version we select
 
 console.log("AnswerLet ", answerLet + " gameplay Answer " + gameData.A);
 winLoseCalc(answerLet);
-}
+setWinlose(" " + winLoseCalc(answerLet));
+};
 
 const winLoseCalc = (answerLet) => {
 
@@ -63,6 +67,7 @@ const winLoseCalc = (answerLet) => {
       controlShouldRenderValue={false}
       />
     </div>
+    <h4>{answer ? "You selected " + answer + winlose : ""}</h4>
   </div>
   );
 }

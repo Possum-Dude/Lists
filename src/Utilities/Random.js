@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 export const Random = (length) => {
     let min=0;
