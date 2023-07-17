@@ -49,8 +49,8 @@ const winLoseCalc = (answerLet) => {
         footer: 'want to play again?',
         
       })
-      setAnswerCorrect([...answersCorrect, gameData.A]);
-      return "You Win!";
+      setAnswerCorrect([...answersCorrect,  gameData.Q + " is " + answerLet]);
+      return;
     } 
     else {
       MySwal.fire({
@@ -59,8 +59,8 @@ const winLoseCalc = (answerLet) => {
         text: 'the anser is ' + gameData.A,
         footer: 'Nice try have another go'
       })
-      setAnswerIncorrect([...answersIncorrect, gameData.A]);
-      return "You Lose!";
+      setAnswerIncorrect([...answersIncorrect, gameData.Q + " is not " + answerLet]);
+      return;
     }
 }
 };
@@ -87,7 +87,7 @@ const winLoseCalc = (answerLet) => {
       controlShouldRenderValue={false}
       />
     </div>
-    <div>{winlose}</div>
+    {/* <div>{winlose}</div> */}
 
     <ResultsPage answersCorrect={answersCorrect} answersIncorrect={answersIncorrect} />
 
