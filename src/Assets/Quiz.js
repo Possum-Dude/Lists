@@ -34,7 +34,7 @@ export const quizData = [
   },
   {
     Q: "Who was the first European to arrive in New Zealand",
-    A: "(+ Bonus point for his nationality) Abel Tasman, Dutch",
+    A: "Abel Tasman",
   },
   {
     Q: "Who is New Zealand’s monarch",
@@ -42,11 +42,11 @@ export const quizData = [
   },
   {
     Q: "How many official languages are there in NZ",
-    A: "Two. Te reo Māori (the language Māori) and New Zealand Sign Language.",
+    A: "Two. Te reo Māori and New Zealand Sign Language.",
   },
   {
     Q: "What are the two national anthems of New Zealand",
-    A: "(1 point each) “God defend New Zealand” and “God Save the Queen”",
+    A: " “God defend New Zealand” and “God Save the King”",
   },
   {
     Q: "How tall is Aoraki Mount Cook",
