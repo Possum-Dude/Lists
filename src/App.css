@@ -68,27 +68,50 @@ body {
 }
  
 .cardBody {
+
   border-radius: 18px;
+
   width: auto;
+
   font-size: 0.9em;
+
   /* font-weight: bold; */
+
   font-family: "Roboto", sans-serif;
+
   /* color: #1b1c1f; */
+
   /* background-color: #eff1e6a1; */
+
   color: rgb(57, 50, 3);
+
   background-color: #ffffff;
+
   padding: 0.4em;
+
   margin-right: 1em;
+
   margin-top: 1em;
+
   margin-left: 1em;
+
   /* min-height: 100px; */
+
   box-shadow: 0.5em 0.5em 0.5em rgb(170, 175, 224);
+
 }
- 
+
+
+
+
 .cardBody:hover {
+
   background-color: #ffffff;
+
   /* box-shadow: 3px 3px red, -1em 0 0.4em olive; */
+
   transform: translateY(-7px);
+
 }
  
 /* .joketext {

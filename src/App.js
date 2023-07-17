@@ -6,6 +6,7 @@ import Select from 'react-select';
 import { selectCustomStyles } from './Utilities/SelectReactSettings';
 import swal from "sweetalert2";
 import withReactContent from 'sweetalert2-react-content';
+import { ResultsPage } from './Components/ResultsPage';
 
 function App() {
 
@@ -14,6 +15,8 @@ const [gameData, setGameData] = useState({Q:'start',A:'start'});
 const [answerData, setAnswerData] = useState(sortedListAnswers);
 const [answer, setAnswer] = useState("");
 const [winlose, setWinlose] = useState("");
+const [answersCorrect, setAnswerCorrect] = useState([]);
+const [answersIncorrect, setAnswerIncorrect] = useState([]);
 const MySwal = withReactContent(swal);
 let answerLet = "";
 
@@ -46,6 +49,7 @@ const winLoseCalc = (answerLet) => {
         footer: 'want to play again?',
         
       })
+      setAnswerCorrect([...answersCorrect, gameData.A]);
       return "You Win!";
     } 
     else {
@@ -55,6 +59,7 @@ const winLoseCalc = (answerLet) => {
         text: 'the anser is ' + gameData.A,
         footer: 'Nice try have another go'
       })
+      setAnswerIncorrect([...answersIncorrect, gameData.A]);
       return "You Lose!";
     }
 }
@@ -83,6 +88,9 @@ const winLoseCalc = (answerLet) => {
       />
     </div>
     <div>{winlose}</div>
+
+    <ResultsPage answersCorrect={answersCorrect} answersIncorrect={answersIncorrect} />
+
   </div>
   );
 }
